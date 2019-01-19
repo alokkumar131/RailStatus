@@ -1,0 +1,26 @@
+<div class="row">
+<h2 *ngFor="let trainname of routes[1]">{{trainname.name}}-{{trainname.number}}</h2>
+  <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
+  <div class="table-responsive">
+  <table class="table table-fixed" >
+    <thead>
+      <tr>
+        <th class="col-lg-6 col-md-6 col-sm-6">Stations</th>
+        <th class="col-lg-2 col-md-2 col-sm-2">Code</th>
+        <th class="col-lg-2 col-md-2 col-sm-2">Scharr</th>
+        <th class="col-lg-2 col-md-2 col-sm-2">Schdep</th>
+      </tr>
+    </thead>
+    <tbody class="table-wrapper-scroll-y">
+      <tr *ngFor="let route of routes[0]">
+        <td class="col-lg-6 col-md-6 col-sm-6">{{route.station.name}}</td>
+        <td class="col-lg-2 col-md-2 col-sm-2">{{route.station.code}}</td>
+        <td class="col-lg-2 col-md-2 col-sm-2">{{route.scharr}}</td>
+        <td class="col-lg-2 col-md-2 col-sm-2">{{route.schdep}}</td>
+      </tr>      
+    </tbody>
+  </table>
+</div>
+</div>
+
+
