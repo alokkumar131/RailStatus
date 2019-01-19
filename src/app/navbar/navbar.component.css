@@ -1,0 +1,13 @@
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+.navbar-dark .navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+}
+.nav-item:hover{
+   background-color: orangered;
+   border-radius:10px;
+};

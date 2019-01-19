@@ -13,7 +13,6 @@ import { TrainNameNumberComponent } from './train-name-number/train-name-number.
 import { TrainFareEnquiryComponent } from './train-fare-enquiry/train-fare-enquiry.component';
 import { TrainRouteDetailComponent } from './train-route-detail/train-route-detail.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
-
 @NgModule({
   declarations: [
     AppComponent,
