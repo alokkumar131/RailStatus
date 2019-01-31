@@ -12,6 +12,7 @@ const apikey={
   providedIn: 'root'
 })
 export class TrainapiService {
+  public res;
 
   constructor(private http:HttpClient) { }
   private _url: string;
@@ -19,6 +20,7 @@ export class TrainapiService {
   fetchRoute(value): Observable<any> {
     return this.http.get("https://api.railwayapi.com/v2/route/train/"+value.trainnumber+"/apikey/"+apikey.key).pipe(
     tap(response=>{
+      this.res=response;
       })
     )
 }

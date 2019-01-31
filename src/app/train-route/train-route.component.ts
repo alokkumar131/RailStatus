@@ -19,6 +19,7 @@ export class TrainRouteComponent implements OnInit {
   }
   getRoute(value:any){
     this._trainapiservice.fetchRoute(value)
+    
     .subscribe(result=>{
       result.route.forEach((res)=>{
         this.trains.push(res);

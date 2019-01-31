@@ -1,3 +1,6 @@
+.row{
+  margin-top: 90px;
+}
 .table-fixed thead {
     width: 97%;
   }
@@ -13,3 +16,22 @@
     float: left;
     border-bottom-width: 0;
   }
+  .tb{
+    height: 230px;
+    overflow-y: auto;
+    width: 100%;
+  }
+  dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+    left: -39px;
+}
+.waiting{
+  position: relative;
+  font-size: 18px;
+  left: 1rem;
+  top: 1rem;
+}

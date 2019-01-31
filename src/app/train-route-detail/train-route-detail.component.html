@@ -1,6 +1,15 @@
-<div class="row">
-<h2 *ngFor="let trainname of routes[1]">{{trainname.name}}-{{trainname.number}}</h2>
-  <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
+<div class="row" *ngIf="isRoutes()">
+<h2 *ngFor="let trainname of routes[1]">{{trainname.name}}-{{trainname.number}}--{{trainname.days[0].code}}</h2>
+
+
+  <ul *ngFor="let trainname of routes[1]">
+      <h5>Running On</h5>
+    <ul *ngFor="let trai of trainname.days">
+      <li>{{trai.code}}</li>
+    </ul>  
+    </ul>
+ 
+
   <div class="table-responsive">
   <table class="table table-fixed" >
     <thead>
@@ -17,10 +26,20 @@
         <td class="col-lg-2 col-md-2 col-sm-2">{{route.station.code}}</td>
         <td class="col-lg-2 col-md-2 col-sm-2">{{route.scharr}}</td>
         <td class="col-lg-2 col-md-2 col-sm-2">{{route.schdep}}</td>
-      </tr>      
+      </tr>  
+   
     </tbody>
   </table>
 </div>
 </div>
+<div class="row" *ngIf="! isRoutes()">
+  <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+    <span class="sr-only">Loading...</span>
+    
+  </div>
+  <h4 class="waiting">Please enter the pnr number</h4>
+</div>
+
+
 
 

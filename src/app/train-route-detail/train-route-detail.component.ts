@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TrainapiService } from '../trainapi.service';
 
 @Component({
   selector: 'app-train-route-detail',
@@ -7,11 +8,28 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TrainRouteDetailComponent implements OnInit {
   @Input() routes:Array<any>;
-  constructor() { }
+ 
+  constructor(private _trainapiservice:TrainapiService) { }
 
   ngOnInit() {
     
   }
+  isRoutes(){
+    const token=this.routes[0];
+    console.log(this.routes)
+    if(token==undefined){
+     return false;
+    }else{
+      return true;
+    }
+
+  
+    
+    
+ }
+
+
+  
   
 
 }
