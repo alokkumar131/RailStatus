@@ -10,25 +10,30 @@ export class TrainRouteComponent implements OnInit {
   public routes:Array<any>=[];
   public trains:Array<any>=[];
   public trainname:Array<any>=[];
+  public error:Array<any>=[];
   @ViewChild('userForm') formValues;
 
 
   constructor(private _trainapiservice:TrainapiService) { }
 
-  ngOnInit() {
+  ngOnInit() {  
   }
   getRoute(value:any){
     this._trainapiservice.fetchRoute(value)
-    
     .subscribe(result=>{
       result.route.forEach((res)=>{
         this.trains.push(res);
       })
       this.trainname.push(result.train);
-      console.log(result);
+      
        this.routes.push(this.trains);
        this.routes.push(this.trainname);
-       console.log(this.routes);
+       
+    },error=>{
+      if(error){
+        this.error=error;
+        this.routes.push(this.error);
+      }
     })
     this.formValues.reset();
   }

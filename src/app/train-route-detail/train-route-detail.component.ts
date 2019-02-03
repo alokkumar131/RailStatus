@@ -16,11 +16,10 @@ export class TrainRouteDetailComponent implements OnInit {
   }
   isRoutes(){
     const token=this.routes[0];
-    console.log(this.routes)
-    if(token==undefined){
-     return false;
+    if(token!=undefined){
+     return true;
     }else{
-      return true;
+      return false;
     }
 
   

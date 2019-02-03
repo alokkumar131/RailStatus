@@ -3,11 +3,11 @@
       <h3>Train Route Detail</h3>
       
       <form class="col-lg-12" #userForm="ngForm" (ngSubmit)="getRoute(userForm.value)" autocomplete="off">
-          <div class="form-group">
-            <label for="email">Train Number:</label>
-            <input type="text" class="form-control" id="trainnumber" (ngModelChange)="valuechange($event)" placeholder="Enter Train Number" name="trainnumber" ngModel>
+          <div class="form-group">            
+            <label for="trainnumber">Train Number:</label>
+            <input type="text" autofocus required minlength="5" maxlength="5" class="form-control" id="trainnumber" (ngModelChange)="valuechange($event)" placeholder="Enter Train Number" name="trainnumber" ngModel>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button [disabled]="!userForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
         </form>
         
   </div>
